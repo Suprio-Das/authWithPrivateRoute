@@ -1,6 +1,14 @@
 import { Link } from "react-router";
 
 const Signup = () => {
+    const handleSignup = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        console.log(name, email, password);
+    }
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -10,9 +18,9 @@ const Signup = () => {
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <div className="card-body">
-                            <form className="fieldset">
+                            <form onSubmit={handleSignup} className="fieldset">
                                 <label className="fieldset-label">Name</label>
-                                <input type="text" className="input" placeholder="Name" name="email" />
+                                <input type="text" className="input" placeholder="Name" name="name" />
                                 <label className="fieldset-label">Email</label>
                                 <input type="email" className="input" placeholder="Email" name="email" />
                                 <label className="fieldset-label">Password</label>
