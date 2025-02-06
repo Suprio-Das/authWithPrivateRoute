@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -20,7 +21,8 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
                 setUser(currentUser);
-                console.log("Curretly Logged in User: ", currentUser)
+                console.log("Curretly Logged in User: ", currentUser);
+                setLoading(false);
             }
             else {
                 setUser(null);
@@ -40,7 +42,8 @@ const AuthProvider = ({ children }) => {
         createUser,
         signInUser,
         user,
-        signOutUser
+        signOutUser,
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>
