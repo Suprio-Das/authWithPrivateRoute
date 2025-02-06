@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
@@ -23,6 +25,7 @@ const Login = () => {
                                 <div><a className="link link-hover">Forgot password?</a></div>
                                 <button type="submit" className="btn btn-neutral mt-4">Login</button>
                             </form>
+                            <p>New User? <Link to="/signup" className="underline cursor-pointer">Register Now</Link></p>
                         </div>
                     </div>
                 </div>
