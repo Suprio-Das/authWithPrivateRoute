@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
+    const authInfo = useContext(AuthContext)
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -8,6 +11,7 @@ const Login = () => {
 
         console.log(email, password);
     }
+    console.log(authInfo)
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
