@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../Firebase.config";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useNavigate } from "react-router";
 
 export const AuthContext = createContext(null);
 
