@@ -36,6 +36,9 @@ const Navbar = () => {
                     {
                         user && <li><NavLink to="/private">Private</NavLink></li>
                     }
+                    {
+                        user && <li><NavLink to="/orders">Orders</NavLink></li>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
